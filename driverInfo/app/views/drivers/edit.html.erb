@@ -1,19 +1,19 @@
-<h1>New Driver</h1>
-<%= form_for :driver, url: drivers_path do |f| %>
+<h1>Edit driver</h1>
 
-  <% if @driver.errors.any? %>
+<%= form_for (@driver) do |f| %>
+  <% if @driver.errors.any?  %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@driver.errors.count, "error") %> 
-        prohibited this driver from being saved
+        <%= pluralize(@driver.errors.count, "error") %>
+        stopped this driver from being saved:
       </h2>
       <ul>
         <% @driver.errors.full_messages.each do |msg| %>
           <li>
             <%= msg %>
           </li>
-        <% end %>
-      </ul>  
+        <% end %> %>
+      </ul>
     </div>
   <% end %>
 
@@ -30,6 +30,7 @@
   <p>
     <%= f.submit %>
   </p>
-<% end %>  
+
+<% end %>
 
 <%= link_to 'Driver List', drivers_path %>

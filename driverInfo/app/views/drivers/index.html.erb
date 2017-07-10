@@ -1,0 +1,14 @@
+<p>
+  <%= link_to 'New Driver', new_driver_path %>
+
+  <ul>
+    <% @drivers.each do |driver| %>
+      <li>
+        <%= driver.title %>
+        <%= driver.text %>
+        <%= link_to 'Show', driver_path(driver) %>
+        <%= link_to 'Edit', edit_driver_path(driver) %>
+      </li>
+    <% end %>
+  </ul>
+</p>
